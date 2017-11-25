@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.WritableMap;
 import com.tencent.mm.opensdk.constants.ConstantsAPI;
 import com.tencent.mm.opensdk.modelbase.BaseReq;
 import com.tencent.mm.opensdk.modelbase.BaseResp;
@@ -51,7 +53,11 @@ public abstract class XWXPayEntryActivity extends Activity implements IWXAPIEven
         if (resp.getType() == ConstantsAPI.COMMAND_PAY_BY_WX) {
             if (callback != null) {
                 Log.e(TAG, "callback");
-                callback.callBack(resp.errCode);
+                WritableMap data = Arguments.createMap();
+                data.putString("errStr", resp.errStr);
+                data.putString("errCode", "" + resp.errCode);
+                data.putString("type", "" + resp.getType());
+                callback.callBack(data);
             }
             //resp.errCode == 0 支付成功
             // resp.errCode == -1

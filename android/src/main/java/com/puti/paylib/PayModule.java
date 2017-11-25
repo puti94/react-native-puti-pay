@@ -30,7 +30,7 @@ public class PayModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "XPay";
+        return "PutiPay";
     }
 
 
@@ -73,8 +73,8 @@ public class PayModule extends ReactContextBaseJavaModule {
         api.registerApp(WX_APPID);
         XWXPayEntryActivity.callback = new WXPayCallBack() {
             @Override
-            public void callBack(int result) {
-                callback.invoke(new Integer(result));
+            public void callBack(WritableMap result) {
+                callback.invoke(result);
             }
         };
         //发起请求

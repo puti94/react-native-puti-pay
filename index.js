@@ -14,7 +14,7 @@ export default class XPay {
      * @param callback    支付宝回调结果  详情见 https://docs.open.alipay.com/204/105301
      */
     static alipay(orderInfo, callback) {
-        NativeModules.XPay.alipay(orderInfo, callback)
+        NativeModules.PutiPay.alipay(orderInfo, callback)
     }
 
 
@@ -23,7 +23,7 @@ export default class XPay {
      * @param id
      */
     static setWxId(id) {
-        NativeModules.XPay.setWxId(id);
+        NativeModules.PutiPay.setWxId(id);
     }
 
     /**
@@ -32,7 +32,7 @@ export default class XPay {
      */
     static setAlipayScheme(scheme) {
        if (Platform.OS === 'ios')
-            NativeModules.XPay.setAlipayScheme(scheme);
+            NativeModules.PutiPay.setAlipayScheme(scheme);
     }
 
     /**
@@ -54,6 +54,6 @@ export default class XPay {
      *                          -2: 原因 用户取消,无需处理。发生场景：用户不支付了，点击取消，返回APP
      */
     static wxPay(params, callBack) {
-        NativeModules.XPay.wxPay(params, callBack)
+        NativeModules.PutiPay.wxPay(params, callBack)
     }
 }

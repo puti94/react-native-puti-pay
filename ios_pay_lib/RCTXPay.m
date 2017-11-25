@@ -16,7 +16,7 @@
     RCTResponseSenderBlock wxCallBack;
     RCTResponseSenderBlock alipayCallBack;
 }
-RCT_EXPORT_MODULE();
+RCT_EXPORT_MODULE(PutiPay);
 - (instancetype)init
 {
     self = [super init];
@@ -120,4 +120,3 @@ RCT_EXPORT_METHOD(wxPay:(NSDictionary *)params  callback:(RCTResponseSenderBlock
     }
 }
 @end
-
