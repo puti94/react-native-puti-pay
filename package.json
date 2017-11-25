@@ -1,0 +1,19 @@
+{
+  "name": "react-native-puti-pay",
+  "version": "0.0.1",
+  "description": "微信和支付宝支付的react-native模块",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puti94/react-native-puti-pay.git"
+  },
+  "author": "菩提",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/puti94/react-native-puti-pay/issues"
+  },
+  "homepage": "https://github.com/puti94/react-native-puti-pay#readme"
+}
