@@ -1,6 +1,6 @@
 {
   "name": "react-native-puti-pay",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "微信和支付宝支付的react-native模块",
   "main": "index.js",
   "scripts": {

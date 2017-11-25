@@ -77,11 +77,12 @@
 
         //设置微信ID
         XPay.setWxId(id)
+        //设置	支付宝URL Schemes
+        XPay.setAlipayScheme(scheme)
         
-        //支付宝Android端的支付
-        XPay.alipayAndroid(orderInfo,(res)=>console.log(res))
-        //支付宝IOS端的支付
-        XPay.alipayAndroid(orderInfo,'IOS配置填写的支付宝URL Schemes',(res)=>console.log(res))
+        //支付宝支付
+        //orderInfo是后台拼接好的支付参数
+        XPay.alipay(orderInfo,(res)=>console.log(res))
         //微信支付
         //这些参数都是由后台生成的
         let params = {

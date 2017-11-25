@@ -5,7 +5,7 @@
  * Email:1059592160@qq.com
  */
 import {NativeModules, Platform} from 'react-native'
-const XPay = NativeModules.XPay;
+
 export default class XPay {
 
     /**
@@ -13,28 +13,26 @@ export default class XPay {
      * @param orderInfo   订单号
      * @param callback    支付宝回调结果  详情见 https://docs.open.alipay.com/204/105301
      */
-    static alipayAndroid(orderInfo, callback) {
-        if (Platform.OS === 'android')
-            XPay.alipay(orderInfo, callback)
+    static alipay(orderInfo, callback) {
+        NativeModules.XPay.alipay(orderInfo, callback)
     }
 
-    /**
-     * 支付宝Android端支付
-     * @param orderInfo   订单号
-     * @param callback    支付宝回调结果  详情见 https://docs.open.alipay.com/204/105301
-     * @param scheme      IOS URL_TYPE里面设置的URL Schemes 为了使值唯一，建议使用ap+支付宝应用ID
-     */
-    static alipayIOS(orderInfo, scheme, callback) {
-        if (Platform.OS === 'ios')
-            XPay.alipay(orderInfo, scheme, callback)
-    }
 
     /**
      * 设置微信APPID
      * @param id
      */
     static setWxId(id) {
-        XPay.setWxId(id);
+        NativeModules.XPay.setWxId(id);
+    }
+
+    /**
+     * 设置支付宝跳转Scheme
+     * @param scheme
+     */
+    static setAlipayScheme(scheme) {
+       if (Platform.OS === 'ios')
+            NativeModules.XPay.setAlipayScheme(scheme);
     }
 
     /**
@@ -56,6 +54,6 @@ export default class XPay {
      *                          -2: 原因 用户取消,无需处理。发生场景：用户不支付了，点击取消，返回APP
      */
     static wxPay(params, callBack) {
-        XPay.wxPay(params, callBack)
+        NativeModules.XPay.wxPay(params, callBack)
     }
 }
