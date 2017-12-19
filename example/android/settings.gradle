@@ -1,0 +1,5 @@
+rootProject.name = 'PayExample'
+include ':react-native-puti-pay'
+project(':react-native-puti-pay').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-puti-pay/android')
+
+include ':app', ':paylib'
