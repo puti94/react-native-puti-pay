@@ -68,6 +68,15 @@
 
   
    ```
+   如果在早期版本有可能需要实现ReactPackage需要实现createJSModules方法。
+
+   那么在PayReactPackage文件添加一行
+   ```
+    @Override
+    public List<Class<? extends JavaScriptModule>> createJSModules() {
+        return Collections.emptyList();
+    }
+   ```
 
    可参考example项目(仅供参考)。
 
