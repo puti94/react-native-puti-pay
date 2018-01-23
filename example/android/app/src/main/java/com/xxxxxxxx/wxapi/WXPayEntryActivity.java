@@ -1,4 +1,4 @@
-package com.tiantiankanjia.wxapi;
+package com.xxx.wxapi;
 
 import com.puti.paylib.XWXPayEntryActivity;
 
