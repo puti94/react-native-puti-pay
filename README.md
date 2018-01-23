@@ -9,7 +9,7 @@
    ```
 - IOS 集成
 
-   - 第一步 前往node_module里的react-native-puti-pay 文件夹下的ios_pay_lib拷贝到工程目录下,并添加到项目中;
+   - 第一步 前往node_module里的react-native-puti-pay 文件夹下的ios_pay_lib拷贝到工程目录下,并添加到项目中(直接拖到xcode的工程目录下,选择copy items if needed和create groups);
    ![image](https://github.com/puti94/react-native-puti-pay/blob/master/screenshot/WX20171125-142527.png)
    - 第二步 TARGET -> Build Phases -> Linked Binary With Libraries 添加以下系统库
    ![image](https://github.com/puti94/react-native-puti-pay/blob/master/screenshot/WX20171125-142402.png)
@@ -79,6 +79,17 @@
    ```
 
    可参考example项目(仅供参考)。
+
+   如果集成后遇到问题请先检查以下几项:
+   - ios
+
+        ios_pay_lib项目是不是真的拷贝进入ios工程目录下。
+   - android
+
+        是不是添加了wxapi包，和包下面是不是添加了activity,清单文件是不是有声明了这个activity。
+
+        微信开发平台填写的应用签名和包名是不是正确。
+
 
 - 使用:
 
