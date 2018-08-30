@@ -1,5 +1,9 @@
 # react-native-puti-pay
-微信及支付宝支付的react-native模块。       
+微信及支付宝支付的react-native模块。
+
+### example
+[示例项目](https://github.com/puti94/RNExample)
+
 - 自动安装:
    ```
        //first
@@ -77,8 +81,6 @@
         return Collections.emptyList();
     }
    ```
-
-   可参考example项目(仅供参考)。
 
    如果集成后遇到问题请先检查以下几项:
    - ios
