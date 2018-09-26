@@ -2,7 +2,7 @@
 微信及支付宝支付的react-native模块。
 
 ### example
-[示例项目](https://github.com/puti94/RNExample)
+  [示例项目](https://github.com/puti94/RNExample)
 
 - 自动安装:
    ```
