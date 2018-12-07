@@ -20,8 +20,8 @@
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-   - Add `import com.reactlibrary.RNPutiPayPackage;` to the imports at the top of the file
-   - Add `new RNPutiPayPackage()` to the list returned by the `getPackages()` method
+   - Add `import com.puti.paylib.PayReactPackage;` to the imports at the top of the file
+   - Add `new PayReactPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
 
    ```
