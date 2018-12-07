@@ -85,8 +85,8 @@
    并配置Android Manifest XML
     <activity
             android:name=".wxapi.WXPayEntryActivity"
-            android:exported="true"
-            android:launchMode="singleTop" />
+            android:label="@string/app_name"
+            android:exported="true" />
 ```
 
  如果在早期版本有可能需要实现ReactPackage需要实现createJSModules方法。
