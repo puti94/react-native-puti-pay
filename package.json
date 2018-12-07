@@ -1,11 +1,16 @@
 {
   "name": "react-native-puti-pay",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "微信和支付宝支付的react-native模块",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "react-native",
+    "wechat",
+    "alipay"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/puti94/react-native-puti-pay.git"

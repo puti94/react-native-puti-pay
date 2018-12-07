@@ -1,17 +1,18 @@
+def safeExtGet(prop, fallback) {
+    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
+
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "27.0.1"
+    compileSdkVersion safeExtGet('compileSdkVersion', 23)
+    buildToolsVersion safeExtGet('buildToolsVersion', '23.0.1')
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 26
+        minSdkVersion safeExtGet('minSdkVersion', 16)
+        targetSdkVersion safeExtGet('targetSdkVersion', 22)
         versionCode 1
         versionName "1.0"
-
-
-
     }
     buildTypes {
         release {
@@ -24,6 +25,6 @@ android {
 dependencies {
     compile 'com.facebook.react:react-native:+'
     // From node_modules
-    compile files('libs/alipaySdk-20170922.jar')
+    compile (name: 'alipaySdk-15.5.9-20181123210601', ext: 'aar')
     compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
 }
