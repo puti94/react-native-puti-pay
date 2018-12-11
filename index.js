@@ -36,6 +36,15 @@ export default class XPay {
     }
 
     /**
+     * 设置支付宝沙箱环境，仅Android
+     * @param isSandBox
+    */
+    static setAlipaySandbox(isSandBox) {
+        if (Platform.OS === 'android')
+            NativeModules.PutiPay.setAlipaySandbox(isSandBox);
+    }
+
+    /**
      * 微信支付
      * 传入参数示例
      * {
