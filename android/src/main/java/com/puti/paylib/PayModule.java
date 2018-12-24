@@ -1,6 +1,7 @@
 package com.puti.paylib;
 
 import com.alipay.sdk.app.PayTask;
+import com.alipay.sdk.app.EnvUtils;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -33,6 +34,14 @@ public class PayModule extends ReactContextBaseJavaModule {
         return "PutiPay";
     }
 
+    @ReactMethod
+    public void setAlipaySandbox(Boolean isSandbox) {
+        if(isSandbox){
+            EnvUtils.setEnv(EnvUtils.EnvEnum.SANDBOX);
+        }else {
+            EnvUtils.setEnv(EnvUtils.EnvEnum.ONLINE);
+        }
+    }
 
     @ReactMethod
     public void alipay(final String orderInfo, final Callback promise) {
