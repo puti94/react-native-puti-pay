@@ -109,7 +109,8 @@
         XPay.setWxId(id)
         //设置    支付宝URL Schemes
         XPay.setAlipayScheme(scheme)
-
+        //支付宝开启沙箱模式 仅限安卓
+        XPay.setAlipaySandbox(isSandBox)
         //支付宝支付
         //orderInfo是后台拼接好的支付参数
         XPay.alipay(orderInfo,(res)=>console.log(res))
