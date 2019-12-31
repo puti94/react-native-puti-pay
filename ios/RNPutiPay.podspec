@@ -15,11 +15,11 @@ Pod::Spec.new do |s|
 
   s.dependency "React"
   s.dependency "AlipaySDK-iOS"
-  s.resource = "AlipaySDK.bundle"
+  #s.resource = "AlipaySDK.bundle"
   #s.vendored_frameworks = 'AlipaySDK.framework'
   s.vendored_libraries = "libWeChatSDK.a"
   s.frameworks = "SystemConfiguration", "CoreTelephony", "QuartzCore", "CoreText", "CoreGraphics", "UIKit", "Foundation", "CFNetwork", "CoreMotion"
-  s.library = "c++", "z"
+  s.library = "c++", "z", "sqlite3.0", "sqlite3"
 
 end
 

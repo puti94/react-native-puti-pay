@@ -2,11 +2,20 @@
 
 ## Getting started
 
-`$ npm install react-native-puti-pay --save`
+```bash
+$ npm install react-native-puti-pay --save
+//or
+$ yarn add react-native-puti-pay
+```
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-puti-pay`
+```bash
+//react-native version>0.60+
+$ cd ios && pod install
+//or
+$ react-native link react-native-puti-pay
+```
 
 ### Manual installation
 
@@ -38,7 +47,7 @@
 
 #### iOS
 
-1. TARGET -> Build Phases -> Linked Binary With Libraries 添加以下系统库
+1. (使用pod管理则不需要这一步)TARGET -> Build Phases -> Linked Binary With Libraries 添加以下系统库
 ![image](https://github.com/puti94/react-native-puti-pay/blob/master/screenshot/WX20171125-142402.png)
 
 2. 在项目中的info.plist中加入应用白名单，右键info.plist选择source code打开(plist具体设置在Build Setting -> Packaging -> Info.plist File可获取plist路径) :
@@ -82,6 +91,13 @@
 在包名目录下创建wxapi文件夹，新建一个名为`WXPayEntryActivity`的activity继承 `com.puti.paylib`包名下的`XWXPayEntryActivity`。
 
 ```
+
+    // wxapi/WXPayEntryActivity.jave
+    package com.自己包名.wxapi;
+    import com.puti.paylib.XWXPayEntryActivity;
+    public class WXPayEntryActivity extends XWXPayEntryActivity {
+    }
+
    并配置Android Manifest XML
     <activity
             android:name=".wxapi.WXPayEntryActivity"
