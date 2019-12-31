@@ -1,24 +1,25 @@
+require "json"
+package = JSON.parse(File.read('../package.json'))
 
 Pod::Spec.new do |s|
-  s.name         = "RNPutiPay"
-  s.version      = "1.0.0"
-  s.summary      = "RNPutiPay"
-  s.description  = <<-DESC
-                  RNPutiPay
-                   DESC
-  s.homepage     = "https://github.com/puti94/react-native-puti-pay"
-  s.license      = "MIT"
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
-  s.author             = { "author" => "author@domain.cn" }
-  s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/author/RNPutiPay.git", :tag => "master" }
-  s.source_files  = "RNPutiPay/**/*.{h,m}"
+  s.name         = 'RNPutiPay'
+  s.version      = package['version']
+  s.summary      = package['description']
   s.requires_arc = true
-
+  s.license      = "MIT"
+  s.homepage     = "https://github.com/puti94/react-native-puti-pay"
+  s.source       = { :git => "https://github.com/puti94/react-native-puti-pay", :tag => "master" }
+  s.author       = "puti94"
+  s.source_files = "**/*.{h,m}"
+  s.platform     = :ios, "8.0"
 
   s.dependency "React"
-  #s.dependency "others"
+  s.dependency "AlipaySDK-iOS"
+  s.resource = "AlipaySDK.bundle"
+  #s.vendored_frameworks = 'AlipaySDK.framework'
+  s.vendored_libraries = "libWeChatSDK.a"
+  s.frameworks = "SystemConfiguration", "CoreTelephony", "QuartzCore", "CoreText", "CoreGraphics", "UIKit", "Foundation", "CFNetwork", "CoreMotion"
+  s.library = "c++", "z"
 
 end
 
-  
