@@ -3,7 +3,7 @@ package com.puti.paylib;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+
 import android.util.Log;
 
 import com.facebook.react.bridge.Arguments;
@@ -25,7 +25,7 @@ public abstract class XWXPayEntryActivity extends Activity implements IWXAPIEven
 
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate: ");
         api = WXAPIFactory.createWXAPI(this, PayModule.WX_APPID);
