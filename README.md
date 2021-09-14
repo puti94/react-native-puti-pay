@@ -88,6 +88,16 @@ $ react-native link react-native-puti-pay
 
 #### Android
 
+在android/app/build.gradle下
+```
+   repositories {
+    flatDir {
+        dirs 'libs','../../node_modules/react-native-puti-pay/android/libs'
+    }
+}
+
+```
+
 在包名目录下创建wxapi文件夹，新建一个名为`WXPayEntryActivity`的activity继承 `com.puti.paylib`包名下的`XWXPayEntryActivity`。
 
 ```
@@ -169,4 +179,4 @@ $ react-native link react-native-puti-pay
 
 2. ios 支付完没有返回商家按钮
    ios应用间跳转判断跳转到哪个应用是通过上面ios配置第三部设置的URL Scheme区分的。`XPay.setWxId()`，`XPay.setAlipayScheme()` 方法都是通过支付的sdk将Scheme传给微信支付宝，支付成功后才能正确跳转回应用，也才有返回商家按钮
-   所有要是没有此功能，请再对照文档检查一遍
+   所有要是没有此功能，请再对照文档检查一遍   

@@ -3,6 +3,7 @@
   "version": "1.4.0",
   "description": "微信和支付宝支付的react-native模块",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
